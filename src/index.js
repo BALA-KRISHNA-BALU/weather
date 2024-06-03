@@ -38,14 +38,14 @@ const WeatherApp = () => {
           console.log(weatherData)
           // console.log(url)
 
-          const temp = weatherData.main.temp
+          const temp = Math.floor(weatherData.main.temp)-273
           const place = weatherData.name
           const longitude = weatherData.coord.lon
           const latitude = weatherData.coord.lat
           const status = weatherData.weather[0].main
           const speed = weatherData.wind.speed
-          const min = weatherData.main.temp_min
-          const max = weatherData.main.temp_max
+          const min = Math.floor(weatherData.main.temp_min)-273
+          const max = Math.floor(weatherData.main.temp_max)-273
           const pressure = weatherData.main.pressure
           const humidity = weatherData.main.humidity
           const sunrise = weatherData.sys.sunrise
@@ -71,7 +71,7 @@ const WeatherApp = () => {
     <div className='degrees'>
       <i class="bi bi-cloud-sun-fill"></i>
       <h1>{place}</h1>
-      <h1>{temp}degrees</h1>
+      <h1>{temp} ℃</h1>
     </div>
 
     <div className='all-data-container'>
